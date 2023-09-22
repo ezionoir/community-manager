@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const User = require("./User");
+const Community = require("./Community")
 
 const CourseSchema = new mongoose.Schema({
     _id: mongoose.Types.ObjectId,
@@ -13,6 +14,17 @@ const CourseSchema = new mongoose.Schema({
         validate: {
             validator: async function(value) {
                 if (!await User.isExistingUser(value)) {
+                    return false;
+                }
+                return true;
+            }
+        }
+    },
+    community: {
+        type: mongoose.Types.ObjectId,
+        validate: {
+            validator: async function(value) {
+                if (!await Community.isExistingCommunity) {
                     return false;
                 }
                 return true;

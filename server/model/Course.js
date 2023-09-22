@@ -4,6 +4,9 @@ const User = require("./User");
 const CourseSchema = new mongoose.Schema({
     _id: mongoose.Types.ObjectId,
     courseName: String,
+    content: {
+        type: Buffer,
+    },
     uploader: {
         type: mongoose.Types.ObjectId,
         ref: "User",

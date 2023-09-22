@@ -16,6 +16,7 @@ const CourseController = {
         const newCourse = new Course({
             _id: new mongoose.Types.ObjectId,
             courseName: req.body.courseName,
+            content: req.body.content,
             uploader: req.body.uploader,
             description: req.body.description,
             price: req.body.price

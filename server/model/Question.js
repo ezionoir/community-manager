@@ -3,7 +3,7 @@ const Resource = require("./Resource");
 
 const QuestionSchema = new mongoose.Schema({
     _id: mongoose.Types.ObjectId,
-    content: {
+    question: {
         type: String,
         requried: true
     },
